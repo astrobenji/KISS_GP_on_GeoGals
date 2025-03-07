@@ -28,7 +28,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("-g",
 			"--gal-name",
-			help="What is the name of the galaxy you are interested in? Format as Nxxxx.",
+			help="What is the name of the galaxy you are interested in? Format as NGCxxxx.",
 			required=True,
 			type=str,
 			dest='gal_name',
@@ -61,7 +61,7 @@ for i in args.length:
 for i in args.diag:
 	diag = i
 
-output_path = 'Results'
+output_path = '../Results'
 
 #######################
 ## Wrangle real data ##
