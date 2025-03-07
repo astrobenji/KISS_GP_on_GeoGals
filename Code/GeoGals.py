@@ -5,7 +5,7 @@ A selection of functions that are helpful for the geostatistical analysis of
 galaxy data.
 
 Created by: Benjamin Metha
-Last Updated: Mar 04, 2025
+Last Updated: Mar 07, 2025
 '''
 
 # Note: Not all of these are used... yet.
@@ -17,36 +17,14 @@ from   astropy.wcs import WCS
 import astropy.units as u
 from   scipy.linalg import cho_factor, cho_solve
 from   extinction import ccm89, apply
-import emcee
 
-raw_data_path   = '/data/projects/punim1156/PHANGS/Raw/'
-local_data_path =  '/home/methab/Geostatistics/ANAL/Data/'
+local_data_path =  '../Data/'
 
 ASEC_PER_RAD = 206265.0
 
 ##################
 #    Open data   #
 ##################
-
-# For raw data
-def open_line_df(gal_ID):
-	'''
-	Parameters:
-	----------
-	
-	gal_ID: str 
-		Galaxy identification string ('N' + 4 numbers)
-	
-	Returns:
-	-------
-	
-	hdu_list: list of HDUs
-		Line maps and error maps for a set of spectroscopic lines.
-	
-	'''
-	hdu_list = fits.open(raw_data_path + '{0}_MAPS_native.fits'.format(gal_ID))
-	# Trim first HDU as it only causes problems
-	return hdu_list[1:]
 
 # For cleaned data
 def open_Hii_df(gal_ID):
@@ -276,7 +254,7 @@ def classify_N2_BPT(line_df, rule="Kauffmann03"):
 	return is_starburst & (N2Ha < 0.05)
 	
 ##########################
-#	Spatial Statistics	 #
+#  Spatial Statistics	 #
 ##########################
 
 def deprojected_distances(RA1, DEC1, RA2=None, DEC2=None, meta=dict()):
