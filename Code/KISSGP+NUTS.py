@@ -61,7 +61,7 @@ for i in args.length:
 for i in args.diag:
 	diag = i
 
-output_path = '/home/methab/Geostatistics/ANAL/Data/NUTS/testing/'
+output_path = 'Results'
 
 #######################
 ## Wrangle real data ##
