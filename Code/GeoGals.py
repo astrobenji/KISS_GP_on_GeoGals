@@ -28,7 +28,7 @@ ASEC_PER_RAD = 206265.0
 
 # For cleaned data
 def open_Hii_df(gal_ID):
-	return pd.read_pickle(local_data_path +'Handmade/Hii_dataframes/Z_maps_{0}.pkl'.format(gal_ID))
+	return pd.read_pickle(local_data_path +'Hii_dataframes/Z_maps_{0}.pkl'.format(gal_ID))
 
 def open_metadata():
 	'''
